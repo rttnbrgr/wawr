@@ -1,0 +1,71 @@
+// Typography
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+
+%futuraBold {
+	// display: block;
+	// text-align: center;
+	// margin-top: 0.5em;
+	font: {
+		size: 1em;
+		weight: bold;
+		weight: 700;
+		family: 'futura-pt', 'futura', sans-serif;
+	}
+}
+
+%futuraBook {
+	display: block;
+	text-align: center;
+	margin-top: 0.5em;
+	font: {
+		weight: 400;
+		family: 'futura-pt', 'futura', sans-serif;
+	}
+}
+
+h1 {
+	
+	text-align: center;
+	font-family: 'futura-pt', sans-serif;
+	font-weight: 400;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	color: white;
+	// color: rgba(white, 0.5);
+	width: 100%;
+	padding: 2em 1em;
+	margin: 2.5em auto;
+	&.no-mb {
+		margin-bottom: 0;
+	}
+
+
+
+	&:hover {
+		color: white;
+	}
+	@include transition;
+	// @include position(absolute, 35% null null null);
+
+	@include bp(baby) {
+		margin: 6em auto;
+
+	}
+
+	@include bp(mama) {
+		color: rgba(white, 0.5);
+		font-size: 2.5em;
+		margin: 4.5em auto;
+
+	}
+
+
+
+
+
+}

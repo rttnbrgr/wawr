@@ -1,0 +1,76 @@
+---
+---
+//////////////////////////////////////////////////
+// TOOLS 										//
+//////////////////////////////////////////////////
+
+// NORMALIZE
+// @import "/bower_components/normalize/normalize.css";
+@import "normalize";
+// BOURBON
+@import "bourbon/bourbon";
+// FONT AWESOME
+@import "../bower_components/fontawesome/scss/font-awesome.scss";
+
+
+//////////////////////////////////////////////////
+// BASE 										//
+//////////////////////////////////////////////////
+
+// VARS, BITS, HELPERS
+@import "bits";
+// Base
+@import "base";
+// Typography
+@import "typography";
+// BTN
+@import "buttons";
+
+$iteWrapper: 1000px;
+
+.siteWrapper {
+	display: block;
+	padding: 2em 3em;
+	margin: 0 auto;
+	width: 100%;
+	// width: 60%;
+	max-width: $iteWrapper;
+}
+
+
+//////////////////////////////////////////////////
+// MODULES 										//
+//////////////////////////////////////////////////
+
+@import "header";
+
+section {
+	display: block;
+	height: 100%;
+	overflow: hidden;
+}
+
+#hero {
+	position: relative;
+	text-align: center;
+	padding: 0 1em;
+
+	a > i {
+		font-size: 4em;
+		color: $white;
+	}
+}
+
+@import "chapter1";
+@import "chapter2";
+@import "jukebox";
+
+// #hero, 
+// #chapter1-video,
+#chapter2-tracklist,
+{
+	display: none;
+}
+
+
+

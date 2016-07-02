@@ -1,0 +1,24 @@
+header {
+	padding: 2em 0;
+	// @include position(fixed, 0 0 null 0);
+	// background-image: url('../img/bg-1.jpg');
+	// background-size: cover;
+	// background-position: center center;
+	// background-attachment: fixed;
+	z-index: 2;
+}
+
+svg.logo { display:none; }
+
+svg.logo, svg.logo-inverse {
+	display: block;
+	// width: 50%;
+	// max-width: 20em
+	@include size(6em 100%);
+	margin: 0 auto;
+	
+	
+	path, polygon {
+		fill: white;
+	}
+}

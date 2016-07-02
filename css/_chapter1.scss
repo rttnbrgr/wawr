@@ -1,0 +1,75 @@
+//////////////////////////
+// Chapter1 - VIDEO 	//
+//////////////////////////
+
+
+#chapter1-video, .chapter-video {
+	// padding: 10em 0 0;
+	position: relative;
+	z-index: 4;
+	padding-top: 3em;
+	background-color: white;
+	@include clearfix;
+
+	h1 { 
+		color: $purp;
+		margin: 0;
+	}
+
+	&#chapter4-video {
+		background-color: $purp;
+		h1 {
+			color: $white;
+		}
+
+		.curtain {
+			background-color: #fff;
+			a {
+				color: $purp;
+			}
+		}
+	}
+}
+
+
+
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+
+	.curtain {
+		@include position(absolute, 0 0 0 0);
+		background-color: $purp;
+
+		@include display(flex);
+		@include align-items(center);
+		// @include flex-direction(row);
+		// @include justify-content(space-around);
+		@include justify-content(center);
+
+		a {
+			font-size: 3em;
+			color: $white;
+			// padding: 3em;
+		}
+
+	}
+
+	&.curtain:after {
+
+		// @include position(absolute, 0 0 0 0);
+		// content: "";
+		// background-color: $purp;
+	}
+	
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
