@@ -1,21 +1,21 @@
 ---
 ---
-//////////////////////////////////////////////////
-// TOOLS 										//
-//////////////////////////////////////////////////
+
+/* ------------
+ * TOOLS
+ ------------ */
 
 // NORMALIZE
-// @import "/bower_components/normalize/normalize.css";
-@import "normalize";
+@import "0-normalize";
 // BOURBON
 @import "bourbon/bourbon";
 // FONT AWESOME
 @import "../bower_components/fontawesome/scss/font-awesome.scss";
 
 
-//////////////////////////////////////////////////
-// BASE 										//
-//////////////////////////////////////////////////
+/* ------------
+ * BASE
+ ------------ */
 
 // VARS, BITS, HELPERS
 @import "bits";
@@ -38,11 +38,16 @@ $iteWrapper: 1000px;
 }
 
 
+
+/* 2 - LAYOUT */
+
+// HEADER
+@import "2-header";
+
 //////////////////////////////////////////////////
 // MODULES 										//
 //////////////////////////////////////////////////
 
-@import "header";
 
 section {
 	display: block;
@@ -64,6 +69,10 @@ section {
 @import "chapter1";
 @import "chapter2";
 @import "jukebox";
+
+
+
+/* debug && shame */
 
 // #hero, 
 // #chapter1-video,

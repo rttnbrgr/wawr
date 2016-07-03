@@ -1,4 +1,5 @@
 # Site settings
+acq-home: 'http://acqtaste.club'
 title: Who Are We Really | ACQ
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"

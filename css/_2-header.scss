@@ -1,0 +1,16 @@
+$logo-color: white;
+
+header {
+	padding: 2rem 0;
+	z-index: 2;
+}
+
+svg.logo, svg.logo-inverse {
+	display: block;
+	@include size(6em 100%);
+	margin: 0 auto;
+	
+	path, polygon {
+		fill: $logo-color;
+	}
+}
