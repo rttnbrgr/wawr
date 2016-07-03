@@ -23,8 +23,19 @@ $z-over: 4;
 	&--alt {
 		background-color: $purp;
 		
-		.feature__title {
-			color: white;
+		.feature__title { color: $white; }
+		.video {
+			&__curtain { background-color: $white; }
+			&__btn { color: $purp; }
 		}
+	}
+
+	&__wrapper {
+		display: block;
+		// edit this for @mq
+		padding: 0 1.5em;
+		margin: 0 auto;
+		width: 100%;
+		max-width: $iteWrapper;
 	}
 }

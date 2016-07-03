@@ -49,24 +49,17 @@ $iteWrapper: 1000px;
 //////////////////////////////////////////////////
 
 
-section {
-	display: block;
-	height: 100%;
-	overflow: hidden;
-}
-
-
+// section {
+// 	display: block;
+// 	height: 100%;
+// 	overflow: hidden;
+// }
 
 // Hero
 @import "3-hero";
-
 // Feature
-.feature {
-	display: block;
-	padding: 3rem 0;
-}
-
 @import "3-feature";
+// Video
 @import "3-video";
 
 
@@ -74,7 +67,7 @@ section {
 /*********************
  * REFACTOR THESE    *
 **********************/
-@import "chapter1";
+// @import "chapter1";
 @import "chapter2";
 @import "jukebox";
 
