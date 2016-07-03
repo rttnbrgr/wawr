@@ -5,7 +5,7 @@ $z-over: 4;
 .feature {
 	display: block;
 	position: relative;
-	padding: 3rem 0;
+	padding: 3rem 0 0;
 	
 	// do i need these?
 	z-index: $z-over;
@@ -16,6 +16,7 @@ $z-over: 4;
 
 	&__title {
 		margin: 0;
+		padding-top: 1em;
 		color: $purp;
 	}
 	
@@ -24,6 +25,7 @@ $z-over: 4;
 		background-color: $purp;
 		
 		.feature__title { color: $white; }
+		
 		.video {
 			&__curtain { background-color: $white; }
 			&__btn { color: $purp; }

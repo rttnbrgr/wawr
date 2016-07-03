@@ -7,7 +7,20 @@
 {% include chapter1.html %}
 
 {% include chapter4.html %}
-{% include chapter3.html %}
+
+<section>
+  {% for track in site.data.wawr.tracks %}
+  <div class="feature__wrapper">
+    <div class="track__number">{{track.id}}</div>
+    <div class="video__wrapper">
+      <div class="video"></div>
+      <div class="video__curtain" style="background-image: url('{{track.image}}')"></div>
+    </div>
+    <div class="track__title">{{track.title}}</div>
+  </div>
+  {% endfor %}
+</section>
+
 
 <div id="center"></div>
 
