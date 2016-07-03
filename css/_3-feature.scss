@@ -1,0 +1,30 @@
+// FEATURE
+
+$z-over: 4;
+
+.feature {
+	display: block;
+	position: relative;
+	padding: 3rem 0;
+	
+	// do i need these?
+	z-index: $z-over;
+	@include clearfix;
+	
+	// default feature colors
+	background-color: $white;	
+
+	&__title {
+		margin: 0;
+		color: $purp;
+	}
+	
+	// for the other color one
+	&--alt {
+		background-color: $purp;
+		
+		.feature__title {
+			color: white;
+		}
+	}
+}

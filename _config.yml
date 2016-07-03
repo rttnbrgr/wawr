@@ -12,6 +12,9 @@ twitter_username: jekyllrb
 github_username:  jekyll
 port: 8002
 
+hero-cta: '#chapter1-video'
+wawr-download: 'audio/wawr/WAWR.zip'
+
 # Build settings
 markdown: kramdown
 

@@ -1,3 +1,7 @@
+$header-color: white;
+$header-color--alt: $purp;
+
+
 // Typography
 a {
 	text-decoration: none;
@@ -35,14 +39,11 @@ h1 {
 	font-size: 1.5em;
 	text-transform: uppercase;
 	letter-spacing: 0.3em;
-	color: white;
-	// color: rgba(white, 0.5);
+	color: white;	
 	width: 100%;
 	padding: 2em 1em;
 	margin: 2.5em auto;
-	&.no-mb {
-		margin-bottom: 0;
-	}
+	
 
 
 

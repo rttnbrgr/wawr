@@ -1,0 +1,21 @@
+// HERO
+.hero {
+	display: block;
+	position: relative;
+	text-align: center;
+	padding: 0 1rem;
+	min-height: 100vh;
+	overflow: hidden;
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	background-color: dodgerblue;
+}
+
+// this should be renamed
+.scroll-target i {
+	font-size: 4rem;
+	color: $white;
+}

@@ -55,17 +55,25 @@ section {
 	overflow: hidden;
 }
 
-#hero {
-	position: relative;
-	text-align: center;
-	padding: 0 1em;
 
-	a > i {
-		font-size: 4em;
-		color: $white;
-	}
+
+// Hero
+@import "3-hero";
+
+// Feature
+.feature {
+	display: block;
+	padding: 3rem 0;
 }
 
+@import "3-feature";
+@import "3-video";
+
+
+
+/*********************
+ * REFACTOR THESE    *
+**********************/
 @import "chapter1";
 @import "chapter2";
 @import "jukebox";

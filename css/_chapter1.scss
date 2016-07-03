@@ -2,25 +2,54 @@
 // Chapter1 - VIDEO 	//
 //////////////////////////
 
+$z-over: 4;
 
+.feature {
+	display: block;
+	position: relative;
+	padding: 3rem 0;
+	
+	// do i need these?
+	z-index: $z-over;
+	@include clearfix;
+	
+	// default feature colors
+	background-color: $white;	
+
+	&__title {
+		margin: 0;
+		color: $purp;
+	}
+	
+	// for the other color one
+	&--alt {
+		background-color: $purp;
+		
+		.feature__title {
+			color: white;
+		}
+	}
+}
+
+ 
 #chapter1-video, .chapter-video {
 	// padding: 10em 0 0;
-	position: relative;
-	z-index: 4;
-	padding-top: 3em;
-	background-color: white;
-	@include clearfix;
+	// position: relative;
+	// z-index: 4;
+	// padding-top: 3em;
+	// background-color: white;
+	// @include clearfix;
 
-	h1 { 
-		color: $purp;
-		margin: 0;
-	}
+	// h1 { 
+	// 	color: $purp;
+	// 	margin: 0;
+	// }
 
 	&#chapter4-video {
-		background-color: $purp;
-		h1 {
-			color: $white;
-		}
+		// background-color: $purp;
+		// h1 {
+		// 	color: $white;
+		// }
 
 		.curtain {
 			background-color: #fff;
