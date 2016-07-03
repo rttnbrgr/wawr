@@ -12,6 +12,9 @@
 		@include align-items(center);
 		@include justify-content(center);	
 		background-color: $purp;
+
+		background-position: center center;
+		background-size: cover;
 	}
 
 	&__btn {
