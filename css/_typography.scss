@@ -31,7 +31,16 @@ a {
 	}
 }
 
-h1 {
+@mixin futura($weight: 400, $color: $white, $size: 1rem) {
+	font: {
+		weight: $weight;
+		family: 'futura-pt', 'futura', sans-serif;	
+		size: $size;
+	}
+	color: $color;
+}
+
+h1, h2 {
 	
 	text-align: center;
 	font-family: 'futura-pt', sans-serif;
@@ -44,7 +53,9 @@ h1 {
 	padding: 2em 1em;
 	margin: 2.5em auto;
 	
-
+	
+	margin: 0 auto;
+	padding: 0 1rem 0;
 
 
 	&:hover {

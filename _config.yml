@@ -12,7 +12,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 port: 8002
 
-hero-cta: '#chapter1-video'
+hero-cta: '#tracklist'
 wawr-download: 'audio/wawr/WAWR.zip'
 
 # Build settings
@@ -25,7 +25,7 @@ exclude:
 - node_modules
 - README.md
 - /audio
+- CNAME
 
 include:
 - .surgeignore
-- CNAME

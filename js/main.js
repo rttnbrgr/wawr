@@ -49,3 +49,16 @@ $('.cinema-play-2').click( function() {
 	// $('.curtain').slideToggle();
 	// $('#cinema').toggleClass('lightsDown');
 });
+
+function playYoutube(videoCode, domTarget){
+	console.log('playing video ' + videoCode);
+	autoPlayVideo()
+}
+
+var videoBtns = $('.video__btn');
+
+function fThis() {
+	console.log(this);
+}
+
+videoBtns.click(fThis());

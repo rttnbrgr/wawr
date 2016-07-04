@@ -1,0 +1,20 @@
+<div id="tracklist">
+  {% for track in site.data.wawr.tracks %}
+  <section class="feature">
+    <div class="feature__wrapper">
+      
+      <div class="track__number feature__number">{{track.id}}</div>
+      
+      <div class="video__wrapper">
+        <div class="video"></div>
+        <div class="video__curtain" style="background-image: url('{{track.image}}')">
+          <a href="javascript:;" class="video__btn" tabindex="1"><span class="fa">&#xf04b;</span></a>
+        </div>
+      </div>
+
+      <h2 class="feature__title">{{track.title}}</h2>
+
+    </div>
+  </section>
+  {% endfor %}
+</div>

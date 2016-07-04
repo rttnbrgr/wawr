@@ -9,8 +9,6 @@
 @import "0-normalize";
 // BOURBON
 @import "bourbon/bourbon";
-// FONT AWESOME
-@import "../bower_components/fontawesome/scss/font-awesome.scss";
 
 
 /* ------------
@@ -38,7 +36,6 @@ $iteWrapper: 1000px;
 }
 
 
-
 /* 2 - LAYOUT */
 
 // HEADER
@@ -47,6 +44,9 @@ $iteWrapper: 1000px;
 //////////////////////////////////////////////////
 // MODULES 										//
 //////////////////////////////////////////////////
+
+
+
 
 
 // section {
@@ -63,14 +63,77 @@ $iteWrapper: 1000px;
 @import "3-video";
 
 
+// Landing
+.landing {
+	display: block;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	
+	@include display(flex);
+	padding: 1.5rem 0;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+
+	background-size: cover, cover;
+	background-position: bottom center, bottom center;
+	background-attachment: scroll, fixed;
+	@include background-image(linear-gradient(transparent 0, rgba(0,0,0,0) 70%, rgba(0,0,0,0.5) 100%), url('../img/wawr_landing.jpg'));
+
+	&::before {
+		// content: "";
+		@include position(absolute, 0);
+		@include size(100%);
+		// background-color: rgba(0,0,0,0.5);
+	}
+	
+	&__logo {
+		display: inline-block;
+		margin: 0 auto;
+	}
+	svg.logo {
+		@include size(4rem 100%);		
+	}
+
+	&__title {
+		font-weight: 700;
+		letter-spacing: 3px;
+		padding: .6em 0 0;
+	}
+
+	&__tagline {
+		text-transform: uppercase;
+		letter-spacing: 0;
+		@include futura;
+		padding: 0 1rem;
+		line-height: 2;
+		margin-top: 0;
+		margin-bottom: 3.125rem;
+	}
+
+	&__target { 
+		display: block; 
+		i {
+			font-size: 3.5rem;
+			color: $white;
+		}
+	}
+
+}
+
+
+
+
+
+
+
 
 /*********************
  * REFACTOR THESE    *
 **********************/
 @import "chapter2";
 @import "jukebox";
-
-
 
 /* debug && shame */
 
@@ -83,3 +146,6 @@ $iteWrapper: 1000px;
 
 
 
+.debug {
+	display: none!important;
+}

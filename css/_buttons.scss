@@ -1,3 +1,6 @@
+$btn-color: $white;
+$btn-color-alt: $purp;
+
 // Buttons
 .btn {
 	display: block;
@@ -21,11 +24,28 @@
 	}
 
 	margin-bottom: 2em;
-	@include bp(baby){
+	
+	@include bp(baby) {
 		margin-bottom: 3em;
 	}
-	@include bp(mama){
+	@include bp(mama) {
 		margin-bottom: 5em;
+	}
+
+
+	font-size: 1.125rem;
+	letter-spacing: 0;
+	line-height: 1;
+	padding: 0.6rem 0;
+	max-width: 15.625rem;
+	border-radius: .5em;
+	border-radius: 5px;
+	margin-top: 1em;
+	margin-bottom: 0;
+
+	&--solid {
+		background-color: $btn-color;
+		color: $green;
 	}
 }
 
