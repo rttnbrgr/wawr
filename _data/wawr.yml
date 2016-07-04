@@ -1,9 +1,9 @@
 # Tracklist
 project-title: Who Are We Really
 tracks:
-- {id: 1, title: 'Who Are We Really?', image: 'img/wawr_0.jpg' }
-- {id: 2, title: 'Break It Down', image: 'img/wawr_2.jpg' }
-- {id: 3, title: '92 Firebird', image: 'img/wawr_3.jpg' }
-- {id: 4, title: 'Beautiful Demise', image: 'img/wawr_5.jpg' }
-- {id: 5, title: 'The Happening', image: 'img/wawr_6.jpg' }
-- {id: 6, title: 'Quartz', image: 'img/wawr_1.jpg' }
+- {id: 1, title: 'Who Are We Really?', image: 'img/wawr_0.jpg', vid-code: '5AP5zQrJRIg' }
+- {id: 2, title: 'Break It Down', image: 'img/wawr_2.jpg', vid-code: 'mwbyMNAkFSo' }
+- {id: 3, title: '92 Firebird', image: 'img/wawr_3.jpg', vid-code: 'O20UFKViXFo' }
+- {id: 4, title: 'Beautiful Demise', image: 'img/wawr_5.jpg', vid-code: '4lYajC4utls' }
+- {id: 5, title: 'The Happening', image: 'img/wawr_6.jpg', vid-code: 'PGwXcmI5fTg' }
+- {id: 6, title: 'Quartz', image: 'img/wawr_1.jpg', vid-code: 'vfAfjI3CI2s' }

@@ -1,0 +1,58 @@
+.landing {
+	position: relative;
+	@include size(100% 100vh);
+	padding: 1.5rem 0;
+	
+	@include display(flex);
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;	
+	
+	&__logo {
+		display: inline-block;
+		margin: 0 auto;
+	}
+	svg.logo {
+		@include size(4rem 100%);		
+	}
+
+	&__title {
+		font-weight: 700;
+		letter-spacing: 3px;
+		padding: .6em 0 0;
+	}
+
+	&__tagline {
+		text-transform: uppercase;
+		letter-spacing: 0;
+		@include futura;
+		padding: 0 1rem;
+		line-height: 2;
+		margin-top: 0;
+		margin-bottom: 3.125rem;
+	}
+
+	&__target { 
+		display: block; 
+		i {
+			font-size: 3.5rem;
+			color: $white;
+		}
+	}
+	
+	// BACKGROUND HACK 
+	&__fixed {
+		@include position(fixed, 0);
+		@include size(100%);		
+		z-index: -1;
+	}
+	&__bg {
+		background-size: cover;
+		background-position: bottom center;
+		@include background-image(
+			linear-gradient(transparent 0, rgba(0,0,0,0) 70%, rgba(0,0,0,0.5) 100%), 
+			url('../img/wawr_landing.jpg'));
+		@include size(100%);
+	}
+
+}
