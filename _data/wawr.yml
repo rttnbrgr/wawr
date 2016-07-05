@@ -1,9 +1,24 @@
 # Tracklist
 project-title: Who Are We Really
 tracks:
-- {id: 1, title: 'Who Are We Really?', image: 'img/wawr_0.jpg', vid-code: '5AP5zQrJRIg' }
-- {id: 2, title: 'Break It Down', image: 'img/wawr_2.jpg', vid-code: 'mwbyMNAkFSo' }
-- {id: 3, title: '92 Firebird', image: 'img/wawr_3.jpg', vid-code: 'O20UFKViXFo' }
-- {id: 4, title: 'Beautiful Demise', image: 'img/wawr_5.jpg', vid-code: '4lYajC4utls' }
-- {id: 5, title: 'The Happening', image: 'img/wawr_6.jpg', vid-code: 'PGwXcmI5fTg' }
-- {id: 6, title: 'Quartz', image: 'img/wawr_1.jpg', vid-code: 'vfAfjI3CI2s' }
+- {id: 1, title: 'Who Are We Really?', image: 'img/wawr_0.jpg', vid-code: '5AP5zQrJRIg' } # timmy turner
+- {id: 2, title: 'Break It Down', image: 'img/wawr_2.jpg', vid-code: 'mwbyMNAkFSo' }      # actual video
+- {id: 3, title: '92 Firebird', image: 'img/wawr_3.jpg', vid-code: 'O20UFKViXFo' }        # do it to em
+- {id: 4, title: 'Beautiful Demise', image: 'img/wawr_5.jpg', vid-code: '4lYajC4utls' }   # old video
+- {id: 5, title: 'The Happening', image: 'img/wawr_6.jpg', vid-code: 'PGwXcmI5fTg' }      # capital
+- {id: 6, title: 'Quartz', image: 'img/wawr_1.jpg', vid-code: 'vfAfjI3CI2s' }             # flex
+
+notes:
+- {text: "Who am i? What am i? am i meant to be here?" }
+- {text: "maybe im a mistake. a glitch in the system." }
+- {text: "maybe i'm exactly where i should be. maybe not." }
+- {text: "maybe i'm making it more acceptable for everyone to be themselves + feel how they want to feel." }
+- {text: "maybe i stopped someone somewhere from committing suicide." }
+- {text: "auto correct doesn't finish the word suicide." }
+- {text: "maybe someone is taking a screenshot of this" }
+- {text: "+ texting it to a friend because they think i'm crazy" }
+- {text: "+ they want to laugh about it." }
+- {text: "this is probably filled with typos + bad grammar." }
+- {text: "i'm paranoid. i'm overwhelmed." }
+- {text: "i smile sometimes. i frown sometimes." }
+- {text: "i'm being honest." }

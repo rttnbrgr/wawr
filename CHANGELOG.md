@@ -2,7 +2,7 @@
 - remove bower_components
 + cleanup head
 - update gulp for surge deploy
-
+- edit button styles
 
 # shownotes 2
 - below the heavens, i struggle ot explain why it's a great album

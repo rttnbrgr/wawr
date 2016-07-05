@@ -13,19 +13,20 @@
 		margin: 0 auto;
 	}
 	svg.logo {
-		@include size(4rem 100%);		
+		@include size(4rem 100%);
 	}
-
+	
+	// move styles to h1
 	&__title {
-		font-weight: 700;
-		letter-spacing: 3px;
-		padding: .6em 0 0;
+		// font-weight: 700;
+		// letter-spacing: 3px;
+		// padding: .6em 0 0;
 	}
 
 	&__tagline {
 		text-transform: uppercase;
-		letter-spacing: 0;
-		@include futura;
+		letter-spacing: 4px;
+		@include futura($size: .75rem);
 		padding: 0 1rem;
 		line-height: 2;
 		margin-top: 0;
@@ -34,8 +35,10 @@
 
 	&__target { 
 		display: block; 
+		overflow: hidden;
 		i {
 			font-size: 3.5rem;
+			font-size: 2.5rem;
 			color: $white;
 		}
 	}
@@ -47,12 +50,33 @@
 		z-index: -1;
 	}
 	&__bg {
+		@include size(100%);
 		background-size: cover;
 		background-position: bottom center;
 		@include background-image(
 			linear-gradient(transparent 0, rgba(0,0,0,0) 70%, rgba(0,0,0,0.5) 100%), 
 			url('../img/wawr_landing.jpg'));
-		@include size(100%);
 	}
+	
+	@include bp(baby) {
+		padding: 2.5rem 0;
 
+		svg.logo {
+			@include size(6rem 100%);
+		}
+
+		&__tagline {
+			font-size: 1rem;
+		}
+
+		&__target i {
+			font-size: 3.5rem;			
+		}
+	}
 }
+
+
+
+
+
+

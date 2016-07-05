@@ -1,0 +1,33 @@
+#center {
+	@include size(1px 100%);
+	@include position(fixed, 0 50% 0 null);
+	background-color: yellow;
+	display: none;
+}
+
+// #hero, 
+// #chapter1-video,
+#chapter2-tracklist,
+{
+	display: none;
+}
+
+
+.break {
+	position: relative;
+	display: block;
+	height: 200px;
+	background-color: red;
+}
+
+.bp-test {
+	display: none;
+	display: block;
+	@include size(100% 1rem);
+	@include position(fixed, 0);
+	background-color: purple;
+	@include bp(baby) { background-color: red; }
+	@include bp(mama) { background-color: green; }
+	@include bp(papa) { background-color: pink; }
+	z-index: 9999;
+}

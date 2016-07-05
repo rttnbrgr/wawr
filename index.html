@@ -6,8 +6,99 @@
 {% include 3-landing.html %}
 {% include 3-tracks.html %}
 
+<!-- YOUTUBE TEST -->
+<div class="feature youtube-test">
+	<div class="feature__wrapper">
+		<a href="javascript:;" class="video__btn" id="play-button" tabindex="1"><span class="fa fa-play"></span></a>
+		<a href="javascript:;" class="video__btn" id="pause-button" tabindex="1"><span class="fa fa-pause"></span></a>
+		
+		<div class="track__number feature__number">X</div>
+		
+		<div class="video__wrapper">
+			<div class="video0">
+				<!-- <iframe src="https://www.youtube.com/embed/5AP5zQrJRIg?enablejsapi=1" frameborder="0" allowfullscreen id="youtube--1"></iframe> -->
+			</div>
+		</div>
+
+		
+
+	</div>
+</div>
+
+
+<script>
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// setup the palyer
+var player;
+function onYouTubeIframeAPIReady() {
+	console.log('onYoutubeIframeAPIReady');
+	
+	// setup a sample player
+	playerId = 'video__target-6';
+	vCode = document.getElementById(playerId).parentNode.dataset.video;
+	vHeight = 1280;
+	vWidth = 720;	
+
+	ytSettings = {
+		vHeight: 1280,
+		vWidth: 720,		
+	}
+
+	console.log(ytSettings);
+	
+	// create youtube embed player
+	player = new YT.Player(playerId, {
+		height: ytSettings.vHeight,
+		width: vWidth,
+		videoId: vCode,
+		playerVars: {
+			'autoplay': 1,
+			'controls': 0,
+			'modestBranding': 0,
+			'showInfo': 0,
+			'rel': 0,
+		},
+		
+		events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		}
+
+	});
+}
+
+function onPlayerReady(event) {
+  // event.target.playVideo();
+  console.log('onPlayerReady');
+  
+  // bind events
+  var playButton = document.getElementById("play-button");
+  playButton.addEventListener("click", function() {
+    player.playVideo();
+  });
+  
+  var pauseButton = document.getElementById("pause-button");
+  pauseButton.addEventListener("click", function() {
+    player.pauseVideo();
+  });
+}
+
+function onPlayerStateChange(event) {
+	console.log('state change');
+}
+
+</script>
+
+
+
 <!-- Debug -->
 <div class="bp-test debug"></div>
-<div id="center debug"></div>
+<div id="center" class="debug"></div>
 
 {% include 2-footer.html %}

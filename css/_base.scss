@@ -14,13 +14,12 @@ body {
 	background-attachment: fixed;	
 }
 
-
 img { max-width: 100%;}
 
 // MEDIA QUEERIES
-$baby-bear: 32em;	// 480px
-$mama-bear: 68em;	// 1020
-$papa-bear: 90em;	// 1350
+$baby-bear: 32em;	// 480px =  30
+$mama-bear: 68em;	// 1020 = 63.75
+$papa-bear: 90em;	// 1350 = 84.375
 
 @mixin bp($point) {
 	
@@ -40,15 +39,4 @@ $papa-bear: 90em;	// 1350
 		@media #{$bp-papa} { @content; }
 	}
 
-}
-
-.bp-test {
-	display: block;
-	@include size(100% 2rem);
-	@include position(fixed, 0);
-	background-color: purple;
-	@include bp(baby) { background-color: red; }
-	@include bp(mama) { background-color: green; }
-	@include bp(papa) { background-color: pink; }
-	z-index: 9999;
 }

@@ -3,6 +3,29 @@
 // -------------------------
 
 
+// old mixins
+%futuraBold {
+	// display: block;
+	// text-align: center;
+	// margin-top: 0.5em;
+	font: {
+		size: 1em;
+		weight: bold;
+		weight: 700;
+		family: 'futura-pt', 'futura', sans-serif;
+	}
+}
+
+%futuraBook {
+	display: block;
+	text-align: center;
+	margin-top: 0.5em;
+	font: {
+		weight: 400;
+		family: 'futura-pt', 'futura', sans-serif;
+	}
+}
+
 // old vars
 $jp-progress-height: 5em;
 

@@ -1,61 +1,41 @@
+// local scope variables
 $btn-color: $white;
-$btn-color-alt: $purp;
+$btn-color-alt: $green;
 
 // Buttons
 .btn {
 	display: block;
 	width: 100%;
-	border: 2px solid white;
-	margin: 0 auto;
-	max-width: 15em;
-	padding: 0.6em;
-
-	font-family: 'futura-pt', sans-serif;
-	font-weight: 400;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	letter-spacing: 0.3em;
-	color: white;
-
-	&:hover {
-		// color: rgba(white, 0.1);
-		background-color: white;
-		background-color: rgba(white, 0.3);
-	}
-
-	margin-bottom: 2em;
+	max-width: 15.625rem;
+	margin: 1em auto 0;
+	padding: 0.5em 0;
 	
-	@include bp(baby) {
-		margin-bottom: 3em;
-	}
-	@include bp(mama) {
-		margin-bottom: 5em;
-	}
-
-
-	font-size: 1.125rem;
+	@include futura(400, $white, 1.125rem);
+	text-transform: uppercase;
 	letter-spacing: 0;
 	line-height: 1;
-	padding: 0.6rem 0;
-	max-width: 15.625rem;
-	border-radius: .5em;
+	
+	border: 2px solid white;
 	border-radius: 5px;
-	margin-top: 1em;
-	margin-bottom: 0;
+	
+	&:hover {
+		background-color: white;
+		color: $btn-color-alt;
+	}
 
 	&--solid {
 		background-color: $btn-color;
-		color: $green;
+		color: $btn-color-alt;
+		&:hover {
+			background-color: $btn-color-alt;
+			color: $btn-color;
+			border-color: $btn-color-alt;
+		}
 	}
-}
 
-.scroll-target {
-	overflow: hidden;
-}
-
-#center {
-	@include size(1px 100%);
-	@include position(fixed, 0 50% 0 null);
-	background-color: yellow;
-	display: none;
+	@include bp(baby) {
+		font-size: 1.5rem;
+		max-width: 20.8125rem;
+	}
+	@include bp(mama) {}
 }

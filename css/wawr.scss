@@ -6,7 +6,7 @@
  ------------ */
 
 // NORMALIZE
-@import "0-normalize";
+// @import "0-normalize";
 // BOURBON
 @import "bourbon/bourbon";
 
@@ -57,12 +57,12 @@ $iteWrapper: 1000px;
 
 // Hero
 @import "3-hero";
+
+
 // Feature
 @import "3-feature";
 // Video
 @import "3-video";
-
-
 // Landing
 @import "3-landing";
 
@@ -72,8 +72,18 @@ $iteWrapper: 1000px;
 
 
 
+.youtube-test {
+	background-color: $green;
+	padding: 5rem 0;
+}
 
 
+.linear-note {
+	display: block;
+	color: white;
+	@include futura;
+	text-transform: uppercase;
+}
 
 /*********************
  * REFACTOR THESE    *
@@ -82,22 +92,8 @@ $iteWrapper: 1000px;
 @import "jukebox";
 
 /* debug && shame */
-
-// #hero, 
-// #chapter1-video,
-#chapter2-tracklist,
-{
-	display: none;
-}
-
-
-.break {
-	position: relative;
-	display: block;
-	height: 200px;
-	background-color: red;
-}
+@import 'shame';
 
 .debug {
-	display: none!important;
+	// display: none!important;
 }

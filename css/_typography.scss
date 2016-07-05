@@ -8,76 +8,44 @@ a {
 	color: inherit;
 }
 
-
-%futuraBold {
-	// display: block;
-	// text-align: center;
-	// margin-top: 0.5em;
-	font: {
-		size: 1em;
-		weight: bold;
-		weight: 700;
-		family: 'futura-pt', 'futura', sans-serif;
-	}
-}
-
-%futuraBook {
-	display: block;
-	text-align: center;
-	margin-top: 0.5em;
-	font: {
-		weight: 400;
-		family: 'futura-pt', 'futura', sans-serif;
-	}
-}
-
+// FUTURA mixin
 @mixin futura($weight: 400, $color: $white, $size: 1rem) {
 	font: {
-		weight: $weight;
 		family: 'futura-pt', 'futura', sans-serif;	
+		weight: $weight;
 		size: $size;
 	}
 	color: $color;
 }
 
-h1, h2 {
-	
-	text-align: center;
-	font-family: 'futura-pt', sans-serif;
-	font-weight: 400;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	letter-spacing: 0.3em;
-	color: white;	
-	width: 100%;
-	padding: 2em 1em;
-	margin: 2.5em auto;
-	
-	
+h1, h2 {	
 	margin: 0 auto;
-	padding: 0 1rem 0;
-
-
-	&:hover {
-		color: white;
-	}
+	padding: .6em 1rem 0;
+	text-align: center;
+	@include futura(700, $white, 1.5rem);
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	
+	// &:hover { color: white; }
 	@include transition;
-	// @include position(absolute, 35% null null null);
+	
+	/*
+	 * MEDIA QUERIES
+	 */
 
 	@include bp(baby) {
-		margin: 6em auto;
-
+		font-size: 36px;
 	}
 
 	@include bp(mama) {
-		color: rgba(white, 0.5);
-		font-size: 2.5em;
-		margin: 4.5em auto;
-
+		// color: rgba(white, 0.5);
+		// font-size: 2.5em;
+		// margin: 4.5em auto;
 	}
+}
 
-
-
-
-
+h2 {
+	font-weight: 400;
+	color: $purp;
+	padding: 1em 0 0;
 }

@@ -35,13 +35,6 @@ videoCurtains = $('.video__curtain');
 function logThis() {
 	console.log(this);
 	var $this = $(this);
-	// var video = $this.siblings('.video');
-	// var videoCode = $(video).dataset('video');
-	// var siblings = $(this).siblings('.video')
-	// this.siblings()
-	// console.log(this);
-	// console.log('video', video);
-	// store the video
 	var video = this.previousElementSibling;
 	var videoCode = video.dataset.video;
 	var test = this.previousElementSibling.dataset.video;
@@ -84,8 +77,31 @@ function addEventHandler(array, type, func) {
 	}
 }
 
-addEventHandler(videoCurtains, 'click', getSiblingVideoCode);
+// addEventHandler(videoCurtains, 'click', getSiblingVideoCode);
 
+// get the videos and turn it to an array
+videosArray = [].slice.call(document.getElementsByClassName('video'));
+
+// get the video codes from the array
+var videoCodesArray = videosArray.map(function(item) {
+	return item.dataset.video
+});
+
+// store length of videos array
+var videosLength = videosArray.length;
+
+// attach click event handler to all of the videos in the array
+for (var i=0; i < videosLength; i++) {
+	// var vcode = videosArray[i].data
+	var clickTarget = videosArray[i].nextElementSibling;
+	var vcode = videoCodesArray[i];
+	clickTarget.addEventListener('click', function() {
+		// var vcode = this.dataset.video;
+		console.log('this is video code ' + vcode);
+		// console.log('this is video code ');
+		// console.log('target ' + i + 'was clicked');
+	})
+}
 
 
 
