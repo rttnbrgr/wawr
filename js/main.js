@@ -1,92 +1,115 @@
-// youtube autoplay
-function autoPlayVideo(vcode, wrapper){
-	"use strict";
-	// Player Sizing
-	var width = 1280;
-	var height = 720;
-	$(wrapper).html('<iframe width="'+width+'" height="'+height+'" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&modestbranding=1&autohide=1&loop=1&rel=0&wmode=transparent&controls=2" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
-	console.log('autoplay swapped for ' + vcode);
-}
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-$('.cinema-play').click( function() {
-	console.log('let\'s go');
-	var vcode = '4lYajC4utls'
-			wrapper = "#video-1"
-
-	autoPlayVideo(vcode, wrapper);
-	$(this).closest('.curtain').slideToggle();	
-});
-
-$('.cinema-play-2').click( function() {
-	console.log('other video');
-	var vcode = 'mwbyMNAkFSo'
-			wrapper = "#video-2"
-	autoPlayVideo(vcode, wrapper);
-	// $('.curtain').css('opacity', 0).slideToggle();
-	$(this).closest('.curtain').slideToggle();
-	// $('.curtain').slideToggle();
-	// $('#cinema').toggleClass('lightsDown');
-});
-
-
-
-videoCurtains = $('.video__curtain');
-
-function logThis() {
-	console.log(this);
-	var $this = $(this);
-	var video = this.previousElementSibling;
-	var videoCode = video.dataset.video;
-	var test = this.previousElementSibling.dataset.video;
-	// var videoCode = $(this).previousElementSibling.dataset.video;
-	console.log('test = ' + videoCode);
-}
+function hideCurtain() {}
 
 function getSiblingVideoCode() {
+	console.log('getSiblingVideoCode ', this);
 	// store the curtain
-	var curtain = this;
-	console.log(this);
-
+	var curtain = this;	
 	// store the video
 	var video = this.previousElementSibling;
 	// get the video id
 	var videoCode = video.dataset.video;
-	console.log('videoCode = ' + videoCode);
 
-	// play the video
-	autoPlayVideo(videoCode, video);
-	// hide the curtain
-	$(curtain).slideToggle();
+	youtubeVideoCode = this.previousElementSibling.dataset.video;
 	
-
-	// pass the video to youtube func
+	return videoCode
 }
 
-function playYoutube(videoCode, domTarget){
+// this is what will store all of our videos
+var wawrVideos = []
 
+function addYoutubeVideo(vTarget, vCode) {
 
-	vcode = getSiblingVideoCode();
-	console.log('playing video ' + vcode);
-	// autoPlayVideo()
+	// default youtube settings
+	ytSettings = {
+		vHeight: 1280,
+		vWidth: 720,
+		vars: {
+			'controls': 0,
+			'modestBranding': 0,
+			'showInfo': 0,
+			'rel': 0,
+			'autoplay': 1,
+		}
+	}	
+	
+	// add a new YT player to the videos array
+	wawrVideos.push(new YT.Player(vTarget, {
+		height: ytSettings.vHeight,
+		width: ytSettings.vWidth,
+		// get the vcode on click
+		videoId: vCode,
+		playerVars: ytSettings.vars,
+		// playerVars: {
+			// autoplay: 1,
+	// 		loop: 1,
+	// 		playlist: 'yOc-MXGuKgs',
+	// 		start: start
+		// },
+		events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange,
+		}
+	}));
 }
 
-function addEventHandler(array, type, func) {
-	var l = array.length;
-	for (var i=0; i < l; i++) {
-		array.eq(i).bind(type, func);
+function pauseAll() {
+	for(var i=0; i < wawrVideos.length; i++){
+		console.log(i)
+		wawrVideos[i].pauseVideo();
 	}
 }
 
-// addEventHandler(videoCurtains, 'click', getSiblingVideoCode);
+//
+// YOUTUBE PLAYER EVENTS
+//
+function onPlayerReady(event) {
+	console.log('onPlayerReady');
+	// event.target.setVolume(0);
+	// event.target.playVideo();
+
+	console.log('event.target = ' + event.target );
+
+	// bind events
+	var playButton = document.getElementById("play-button");
+	playButton.addEventListener("click", function() {
+		wawrVideos[0].playVideo();
+	});
+	
+	var pauseButton = document.getElementById("pause-button");
+	pauseButton.addEventListener("click", pauseAll);
+}
+
+
+function onPlayerStateChange(event) {
+	console.log('state change');
+}
+
+
+
+
+
+
+
+
+
+
+
+// 
+// ADD CLICK EVENT TO ALL CURTAINS
+// 
 
 // get the videos and turn it to an array
 videosArray = [].slice.call(document.getElementsByClassName('video'));
-
 // get the video codes from the array
 var videoCodesArray = videosArray.map(function(item) {
 	return item.dataset.video
 });
-
 // store length of videos array
 var videosLength = videosArray.length;
 
@@ -95,13 +118,34 @@ for (var i=0; i < videosLength; i++) {
 	// var vcode = videosArray[i].data
 	var clickTarget = videosArray[i].nextElementSibling;
 	var vcode = videoCodesArray[i];
+	// console.log('vcode', vcode);
+
 	clickTarget.addEventListener('click', function() {
-		// var vcode = this.dataset.video;
-		console.log('this is video code ' + vcode);
-		// console.log('this is video code ');
-		// console.log('target ' + i + 'was clicked');
-	})
+		// get the video element
+		var videoElement = this.previousElementSibling;
+		// check if it actually has a video associated w/ it
+		(videoElement.dataset.hasVideo === 'true') ? $(this).slideToggle() : $(this).toggleClass('playing');
+		// hide the curtain
+		// $(this).slideToggle();
+		// should be broken out, but THIS is killing me
+		var videoCode = this.previousElementSibling.dataset.video;
+		//get the video target
+		var videoTarget = this.previousElementSibling.children[0].getAttribute('id')
+		// add a new youtube video to the wawr array; pass along the code and target
+		addYoutubeVideo(videoTarget, videoCode);
+		// create new youtube video
+
+
+
+		// var uu = this.previousElementSibling.dataset.video;
+		// console.log(uu);
+		// addYoutubeVideo().bind(this);
+		// addYoutubeVideo().bind(this);
+
+	});
 }
+
+
 
 
 

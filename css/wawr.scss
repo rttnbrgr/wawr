@@ -6,7 +6,7 @@
  ------------ */
 
 // NORMALIZE
-// @import "0-normalize";
+@import "0-normalize";
 // BOURBON
 @import "bourbon/bourbon";
 
@@ -96,4 +96,17 @@ $iteWrapper: 1000px;
 
 .debug {
 	// display: none!important;
+}
+
+
+
+.control-wrapper-thing {
+	@include position(fixed, 0 0 null null);
+	background-color: $purp;
+	z-index: 9999;
+	a { 
+		display: block; 
+		padding: 1rem;
+		font-size: 2rem;
+	}
 }

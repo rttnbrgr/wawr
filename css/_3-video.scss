@@ -15,6 +15,11 @@
 
 		background-position: center center;
 		background-size: cover;
+		@include transition(all .25s ease);
+		
+		&.playing {
+			@include transform(translateY(50%));
+		}
 	}
 
 	&__btn {

@@ -6,8 +6,9 @@
       <div class="track__number feature__number">{{track.id}}</div>
       
       <div class="video__wrapper">
-        <div class="video" data-video="{{track.vid-code}}">
-          <div id="video__target-{{track.id}}"></div>
+        <div class="video" data-video="{{track.vid-code}}" data-has-video={{track.hasVideo}}>
+          <!-- this is what gets replaced -->
+          <div id="video__target-{{track.id}}" class="video__target"></div>
         </div>
         <div class="video__curtain" style="background-image: url('{{track.image}}')">
           <a href="javascript:;" class="video__btn" tabindex="1"><span class="fa">&#xf04b;</span></a>
