@@ -27,3 +27,25 @@ $('.cinema-play-2').click( function() {
 	// $('.curtain').slideToggle();
 	// $('#cinema').toggleClass('lightsDown');
 });
+
+
+//// not old youtube but not in use
+function logThis() {
+	console.log(this);
+	var $this = $(this);
+	var video = this.previousElementSibling;
+	var videoCode = video.dataset.video;
+	var test = this.previousElementSibling.dataset.video;
+	// var videoCode = $(this).previousElementSibling.dataset.video;
+	console.log('test = ' + videoCode);
+}
+
+function addEventHandler(array, type, func) {
+	var l = array.length;
+	for (var i=0; i < l; i++) {
+		array.eq(i).bind(type, func);
+	}
+}
+
+// videoCurtains = $('.video__curtain');
+// addEventHandler(videoCurtains, 'click', getSiblingVideoCode);

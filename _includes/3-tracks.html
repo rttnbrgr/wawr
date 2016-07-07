@@ -11,7 +11,16 @@
           <div id="video__target-{{track.id}}" class="video__target"></div>
         </div>
         <div class="video__curtain" style="background-image: url('{{track.image}}')">
-          <a href="javascript:;" class="video__btn" tabindex="1"><span class="fa">&#xf04b;</span></a>
+
+          <!-- <a href="javascript:;" class="video__btn" tabindex="1"><span class="fa">&#xf04b;</span></a> -->
+          <a href="javascript:;" class="video__btn" tabindex="1">&#9658;</a>
+          <a href="javascript:;" class="video__btn video__btn--pause" tabindex="2">&#9612;&#9612;</a>
+          <!-- <div class="controls__wrapper">
+          </div> -->
+          <div class="video__time">
+            <span class="time--current">1:23</span>/<span class="time--total">4:56</span>
+          </div>
+
         </div>
       </div>
 
